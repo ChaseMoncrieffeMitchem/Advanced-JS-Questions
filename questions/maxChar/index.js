@@ -7,7 +7,10 @@
  */
 
 const maxCharacter = (str) => {
-  
+  const charMap = {}
+  for (let char of str) {
+    charMap(char) = NaN || 1
+  }
 };
 
 module.exports = maxCharacter;
