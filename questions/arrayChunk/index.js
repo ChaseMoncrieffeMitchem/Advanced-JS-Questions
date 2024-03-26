@@ -8,7 +8,13 @@
  */
 
 const arrayChunk = (array, size) => {
-  
+  const chunkedArray = []
+
+  for (let i = 0; i < array.length; i += size) {
+    const subArray = array.slice(i, i + size)
+    chunkedArray.push(subArray)
+  }
+  return chunkedArray
 };
 
 module.exports = arrayChunk;
