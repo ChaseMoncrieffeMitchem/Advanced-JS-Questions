@@ -1,14 +1,21 @@
-const str = "Simplified !"
+const nums = [1, 2, 3, 4]
+const target = 13
 
-const charMap = {}
+const productExceptSelf = (nums) => {
+  const leftProducts = []
+  const rightProducts = []
+  const resultsArray = []
 
-for (let char of str) {
-    if (!charMap[char]) {
-        charMap[char] = 1
-    }
-    else {
-        charMap[char] = charMap[char] + 1
-    }
-}
+  leftProducts[0] = 1
+  rightProducts[nums.length - 1] = 1
 
-console.log(charMap)
+  for (let i = 1; i < nums.length; ++i) {
+      leftProducts[i] = nums[i - 1] * leftProducts[i - 1]
+  }
+
+  for (let i = nums.length - 2; i>= 0; --i) {
+      rightProducts[i] = nums[i + 1] * rightProducts[i + 1]
+  }
+
+  return rightProducts[i]
+};
